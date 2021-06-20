@@ -22,7 +22,7 @@ def main():
 def check_in(places: List[Place]):
     def print_places():
         for place in places:
-            print(f"{place.self_id}. {place.name}")
+            print(f"\t{place.self_id}. {place.name}")
 
     def get_selected_place(id: int):
         return [place for place in places if place.self_id == id][0]
