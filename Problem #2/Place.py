@@ -23,4 +23,4 @@ class Place:
         return self.name
 
     def __repr__(self) -> str:
-        return self.__name__
+        return f"{__class__.__name__}(name='{self.name}', id='{self.self_id}')"
