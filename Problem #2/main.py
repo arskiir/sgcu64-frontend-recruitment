@@ -26,7 +26,9 @@ def check_in(places: List[Place]):
             print(f"\t{place.self_id}. {place.name}")
 
     def get_selected_place(id: int):
-        return [place for place in places if place.self_id == id][0]
+        for place in places:
+            if place.self_id == id:
+                return place
 
     def remove_from_all_places(number: str):
         for place in places:
