@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 from Place import Place
 
 
@@ -19,7 +19,19 @@ def main():
         print_hr()
 
 
-def check_in():
+def check_in(places: List[Place]):
+    def print_places():
+        for place in places:
+            print(f"{place.self_id}. {place.name}")
+
+    def get_selected_place(id: int):
+        return [place for place in places if place.self_id == id][0]
+
+    def remove_from_all_places(number: str):
+        for place in places:
+            if place.exists(number):
+                place.checkout(number)
+
     number = input("Enter a phone number: ")
     print_places()
     selected_place_id = int(input("Select the place: "))
@@ -35,11 +47,11 @@ def check_in():
     selected_place.check_in(number)
 
 
-def checkout():
+def checkout(places: List[Place]):
     pass
 
 
-def print_people_count():
+def print_people_count(places: List[Place]):
     pass
 
 
