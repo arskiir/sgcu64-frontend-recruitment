@@ -19,3 +19,12 @@ def print_result(formatted_time: str):
         for each in formatted_time:
             print(CHAR_MAP[each][line], end="")
         print()
+
+
+def is_valid_range(number: int or str):
+    return 0 <= int(number) <= 59
+
+
+def is_valid_time_format(number_str: str):
+    _, minute, second = number_str.split(":")
+    return is_valid_range(minute) and is_valid_range(second)
