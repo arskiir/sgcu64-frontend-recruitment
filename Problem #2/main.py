@@ -20,7 +20,19 @@ def main():
 
 
 def check_in():
-    pass
+    number = input("Enter a phone number: ")
+    print_places()
+    selected_place_id = int(input("Select the place: "))
+    selected_place = get_selected_place(selected_place_id)
+
+    remove_from_all_places(number)
+
+    if selected_place.exists(number):
+        print(f"{number} has already checked in to this place.")
+        return
+
+    print(f"Checking in {number} into {selected_place.name}")
+    selected_place.check_in(number)
 
 
 def checkout():
