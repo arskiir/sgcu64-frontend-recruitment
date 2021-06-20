@@ -3,7 +3,8 @@ from Place import Place
 
 
 def main():
-    place_names = ["a", 'b', 'c', 'd', 'e', 'f']
+    place_names = ["Mahamakut Building", 'Sara Phra Keaw',
+                   'CU Sport Complex', 'Sanam Juub', 'Samyan Mitr Twon', 'CU Dorm']
     places = [Place(name) for name in place_names]
     options = create_options()
 
