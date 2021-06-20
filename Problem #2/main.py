@@ -59,7 +59,9 @@ def checkout(places: List[Place]):
 
 
 def print_people_count(places: List[Place]):
-    pass
+    print("Current Population")
+    for i, place in enumerate(places, 1):
+        print(f"{i}. {place.name}: {place.count_checked_in}")
 
 
 def print_hr():
