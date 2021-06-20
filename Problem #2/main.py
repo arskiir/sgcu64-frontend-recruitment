@@ -48,7 +48,14 @@ def check_in(places: List[Place]):
 
 
 def checkout(places: List[Place]):
-    pass
+    number = input("Enter phone number: ")
+    for place in places:
+        if place.exists(number):
+            place.checkout(number)
+            print(number + " has checked out from " + place.name)
+            return
+
+    print("This number, " + number + " has not checked in in any places.")
 
 
 def print_people_count(places: List[Place]):
