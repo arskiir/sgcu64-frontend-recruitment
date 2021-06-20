@@ -1,3 +1,5 @@
+import sys
+
 CHAR_MAP = {
     "0": [" __ ", "|  |", "|__|"],
     "1": ["    ", "   |", "   |"],
@@ -12,6 +14,19 @@ CHAR_MAP = {
     ":": ["    ", "  · ", "  · "],
     "b": ["    ", "    ", " __ "],
 }
+
+
+def main():
+    formatted_time = ""
+    if len(sys.argv) > 1:  # user uses this as a command line
+        formatted_time = sys.argv[1]
+    else:
+        formatted_time = input("Input: ")
+
+    if is_valid_time_format(formatted_time):
+        print_result(formatted_time)
+    else:
+        print_result("bb:bb:bb")
 
 
 def print_result(formatted_time: str):
@@ -30,8 +45,5 @@ def is_valid_time_format(number_str: str):
     return is_valid_range(minute) and is_valid_range(second)
 
 
-formatted_time = input("Input: ")
-if is_valid_time_format(formatted_time):
-    print_result(formatted_time)
-else:
-    print_result("bb:bb:bb")
+if __name__ == "__main__":
+    main()
