@@ -1,4 +1,4 @@
-import { arePasswordsMatched, isEmailValid } from "./validators";
+import { arePasswordsMatched, isEmailValid } from "./validators.js";
 
 const form = document.getElementById("register-form");
 form.addEventListener("submit", (event) => {
@@ -14,14 +14,15 @@ form.addEventListener("submit", (event) => {
 
   /* USER CODE Begin: What happened next after receive form data (Optional) */
   alert(
-    "Successfully registered! 😊\nWith the following data:\n" + formatData(data)
+    "Successfully registered! 😊\nWith the following data:\n\n" +
+      formatData(data)
   );
   location.reload(); // signifies that registration was successful
   /* USER CODE END: What happened next after receive form data (Optional) */
 });
 
 const formatData = (data) => {
-  formattedData = "";
+  let formattedData = "";
   for (const key in data) {
     formattedData += data[key] + "\n";
   }
@@ -29,32 +30,33 @@ const formatData = (data) => {
 };
 
 const showErrorMessages = (messages) => {
-  formattedMessage = "😯😯😯\n" + messages.join("\n");
+  const formattedMessage = "😯😯😯\n" + messages.join("\n");
   alert(formattedMessage);
 };
 
 const getDataFromFormAndValidate = (formData) => {
-  bothPasswords = [];
-  data = {};
-  errorMessages = [];
+  const bothPasswords = [];
+  const data = {};
+  const errorMessages = [];
 
   for (const [key, value] of formData.entries()) {
     /* USER CODE Begin: Validate data */
     data[key] = value;
+    console.log("🤷‍♂️👍👍👍 | key", key);
+    console.log("🤷‍♂️👍👍👍 | value", value);
 
-    if ((key === "email" && isEmailValid(value)) === false) {
+    if (key === "email") {
+      if (isEmailValid(value)) continue;
       errorMessages.push("Incorrect email format (must contain '@')");
       continue;
     }
 
     if (key === "password" || key === "confirmpassword") {
       bothPasswords.push(value);
-      if (
-        (bothPasswords.length === 2 && arePasswordsMatched(bothPasswords)) ===
-        false
-      ) {
-        errorMessages.push("Passwords do not match.");
-      }
+      if (bothPasswords.length !== 2) continue;
+      if (arePasswordsMatched(value)) continue;
+      errorMessages.push("Passwords do not match.");
+      continue;
     }
     /* USER CODE Begin: Validate data */
   }
