@@ -1,4 +1,4 @@
-import { arePasswordsMatched, validateEmail } from "./validators";
+import { arePasswordsMatched, isEmailValid } from "./validators";
 
 const form = document.getElementById("register-form");
 form.addEventListener("submit", (event) => {
@@ -44,7 +44,7 @@ const getDataFromFormAndValidate = (formData) => {
     /* USER CODE Begin: Validate data */
     data[key] = value;
 
-    if ((key === "email" && validateEmail(value)) === false) {
+    if ((key === "email" && isEmailValid(value)) === false) {
       errorMessages.push("Incorrect email format (must contain '@')");
       continue;
     }

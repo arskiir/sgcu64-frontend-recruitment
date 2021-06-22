@@ -1,4 +1,4 @@
-export const validateEmail = (email) => {
+export const isEmailValid = (email) => {
   return email.includes("@");
 };
 
