@@ -38,10 +38,17 @@ const getDataFromFormAndValidate = (formData) => {
   const bothPasswords = [];
   const data = {};
   const errorMessages = [];
+  let isBlankDetected = false;
 
   for (const [key, value] of formData.entries()) {
     /* USER CODE Begin: Validate data */
     data[key] = value;
+
+    if (value === "") {
+      if (isBlankDetected) continue; // Shows below message only once
+      errorMessages.splice(0, 0, "Form(s) cannot be blank."); // inserts at the 0th index
+      isBlankDetected = true;
+    }
 
     if (key === "email") {
       if (isEmailValid(value)) continue;
