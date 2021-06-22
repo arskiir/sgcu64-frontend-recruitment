@@ -15,10 +15,20 @@ form.addEventListener("submit", (event) => {
   }
 
   /* USER CODE Begin: What happened next after receive form data (Optional) */
-  alert("Successfully registered! 😊");
+  alert(
+    "Successfully registered! 😊\nWith the following data:\n" + formatData(data)
+  );
   location.reload(); // signifies that registration was successful
   /* USER CODE END: What happened next after receive form data (Optional) */
 });
+
+const formatData = (data) => {
+  formattedData = "";
+  for (const key in data) {
+    formattedData += data[key] + "\n";
+  }
+  return formattedData;
+};
 
 const showErrorMessages = (messages) => {
   formattedMessage = "😯😯😯\n" + messages.join("\n");
