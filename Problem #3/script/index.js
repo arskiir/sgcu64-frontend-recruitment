@@ -1,3 +1,5 @@
+import { arePasswordsMatched, validateEmail } from "./validators";
+
 const form = document.getElementById("register-form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -20,14 +22,6 @@ form.addEventListener("submit", (event) => {
 
   /* USER CODE END: What happened next after recieve form data (Optional) */
 });
-
-const validateEmail = (email) => {
-  return email.includes("@");
-};
-
-const arePasswordsMatched = (bothPasswords) => {
-  return bothPasswords[0] === bothPasswords[1];
-};
 
 const showErrorMessages = (messages) => {
   formattedMessage = "😯😯😯\n" + messages.join("\n");
