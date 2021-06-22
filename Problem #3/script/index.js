@@ -5,22 +5,19 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   console.log("🤷‍♂️👍👍👍 | formData", formData);
-  const data = {};
-  const errorMessages = [];
-  getDataFromFormAndValidate(formData, data, errorMessages);
+
+  const { data, errorMessages } = getDataFromFormAndValidate(formData);
 
   // error(s) detected
   if (errorMessages.length > 0) {
     showErrorMessages(errorMessages);
-  } else {
-    alert("Successfully registered! 😊");
-    location.reload();
+    return;
   }
 
-  console.log(data);
-  /* USER CODE Begin: What happened next after recieve form data (Optional) */
-
-  /* USER CODE END: What happened next after recieve form data (Optional) */
+  /* USER CODE Begin: What happened next after receive form data (Optional) */
+  alert("Successfully registered! 😊");
+  location.reload(); // signifies that registration was successful
+  /* USER CODE END: What happened next after receive form data (Optional) */
 });
 
 const showErrorMessages = (messages) => {
@@ -28,8 +25,11 @@ const showErrorMessages = (messages) => {
   alert(formattedMessage);
 };
 
-function getDataFromFormAndValidate(formData, data, errorMessages) {
+const getDataFromFormAndValidate = (formData) => {
   bothPasswords = [];
+  data = {};
+  errorMessages = [];
+
   for (const [key, value] of formData.entries()) {
     /* USER CODE Begin: Validate data */
     data[key] = value;
@@ -50,4 +50,6 @@ function getDataFromFormAndValidate(formData, data, errorMessages) {
     }
     /* USER CODE Begin: Validate data */
   }
-}
+
+  return { data, errorMessages };
+};
