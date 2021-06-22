@@ -1,4 +1,4 @@
-import { arePasswordsMatched, isEmailValid } from "./validators.js";
+import { doPasswordsMatch, isEmailValid } from "./validators.js";
 
 const form = document.getElementById("register-form");
 form.addEventListener("submit", (event) => {
@@ -52,7 +52,7 @@ const getDataFromFormAndValidate = (formData) => {
     if (key === "password" || key === "confirmpassword") {
       bothPasswords.push(value);
       if (bothPasswords.length !== 2) continue;
-      if (arePasswordsMatched(bothPasswords)) continue;
+      if (doPasswordsMatch(bothPasswords)) continue;
       errorMessages.push("Passwords do not match.");
       continue;
     }
