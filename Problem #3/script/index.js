@@ -4,8 +4,6 @@ const form = document.getElementById("register-form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(form);
-  console.log("🤷‍♂️👍👍👍 | formData", formData);
-
   const { data, errorMessages } = getDataFromFormAndValidate(formData);
 
   // error(s) detected
