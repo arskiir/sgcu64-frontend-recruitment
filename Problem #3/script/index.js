@@ -42,8 +42,6 @@ const getDataFromFormAndValidate = (formData) => {
   for (const [key, value] of formData.entries()) {
     /* USER CODE Begin: Validate data */
     data[key] = value;
-    console.log("🤷‍♂️👍👍👍 | key", key);
-    console.log("🤷‍♂️👍👍👍 | value", value);
 
     if (key === "email") {
       if (isEmailValid(value)) continue;
@@ -54,7 +52,7 @@ const getDataFromFormAndValidate = (formData) => {
     if (key === "password" || key === "confirmpassword") {
       bothPasswords.push(value);
       if (bothPasswords.length !== 2) continue;
-      if (arePasswordsMatched(value)) continue;
+      if (arePasswordsMatched(bothPasswords)) continue;
       errorMessages.push("Passwords do not match.");
       continue;
     }
