@@ -31,8 +31,8 @@ def main():
 
 def print_result(formatted_time: str):
     for line in range(3):
-        for each in formatted_time:
-            print(CHAR_MAP[each][line], end="")
+        for char in formatted_time:
+            print(CHAR_MAP[char][line], end="")
         print()
 
 
