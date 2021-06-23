@@ -50,9 +50,10 @@ body {
 input {
   /* USER CODE Begin: Style the input field */
   padding: 5px 5px;
-  margin: 8px 0;
+  margin-bottom: 8px;
   border-radius: 4px;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
+  width: 15rem;
   /* USER CODE END: Style the input field */
 }
 
@@ -68,7 +69,7 @@ input:focus {
 button {
   /* USER CODE Begin: Style the button */
   display: block;
-  /* width: 100%; */
+  width: 15rem;
   padding: 0.5rem 5rem;
   /* USER CODE END: Style the button */
 }
@@ -111,7 +112,6 @@ button:hover {
   .register-card {
     flex: 1;
     margin: 2rem 0 0 0px;
-    padding: 0 58px 69px 59px;
     max-width: 377px;
   }
 
@@ -168,6 +168,6 @@ button:hover {
 
   .content {
     justify-content: space-between;
-    margin-right: 122px;
+    margin-right: 0;
   }
 }
