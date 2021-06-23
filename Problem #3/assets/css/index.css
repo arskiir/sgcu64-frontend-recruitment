@@ -110,8 +110,8 @@ button:hover {
 
   .register-card {
     flex: 1;
-    margin: 86px 0 88px 0px;
-    padding: 36px 58px 69px 59px;
+    margin: 2rem 0 0 0px;
+    padding: 0 58px 69px 59px;
     max-width: 377px;
   }
 
