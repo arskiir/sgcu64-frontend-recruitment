@@ -98,11 +98,14 @@ button {
   padding: 0.5rem 5rem;
   margin-top: 20px;
   background-color: #ffffff;
+  transition-duration: 0.2s;
   /* USER CODE END: Style the button */
 }
 
 button:hover {
+  transition: background-color;
   background: var(--chula-pink-dark);
+  transition-duration: 0.2s;
   color: white;
 }
 
