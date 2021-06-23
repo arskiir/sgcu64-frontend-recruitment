@@ -27,7 +27,7 @@ body {
 
 .register-card {
   /* USER CODE Begin: Style the card */
-
+  /* prefer not to style anymore 😶 */
   /* USER CODE End: Style the card */
 }
 
@@ -49,7 +49,10 @@ body {
 
 input {
   /* USER CODE Begin: Style the input field */
-
+  padding: 5px 5px;
+  margin: 8px 0;
+  border-radius: 4px;
+  /* box-sizing: border-box; */
   /* USER CODE END: Style the input field */
 }
 
@@ -64,7 +67,9 @@ input:focus {
 
 button {
   /* USER CODE Begin: Style the button */
-
+  display: block;
+  /* width: 100%; */
+  padding: 0.5rem 5rem;
   /* USER CODE END: Style the button */
 }
 
