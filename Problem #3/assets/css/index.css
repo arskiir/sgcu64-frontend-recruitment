@@ -96,7 +96,7 @@ button:hover {
 .cloud,
 .footer {
   /* USER CODE Begin: Hide it */
-  /* display: none; */
+  /* display: none; Why would we want to hide it? 😨😨😨 */
   /* USER CODE END: Hide it  */
 }
 
@@ -106,82 +106,35 @@ button:hover {
   justify-content: center;
 }
 
-/* USER CODE Begin: Manage screen width */
 @media screen and (max-width: 767px) {
-  /* USER CODE END: Manage screen width */
   body {
-    background: url("../img/bg-desktop.svg");
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
+    margin-left: 0;
   }
 
   .topbar {
-    background: #ffffff;
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.08);
-    padding-left: 160px;
-    font-size: 24px;
+    justify-content: center;
+  }
+
+  .content {
+    align-items: center;
+    margin-top: 0;
+    /* width: 100%; */
+  }
+
+  .content > * {
+    width: 80%;
   }
 
   .register-card {
-    flex: 1;
-    margin: 2rem 0 0 0px;
-    max-width: 377px;
-  }
-
-  .kite {
-    /* USER CODE Begin: Control kite */
-
-    /* USER CODE END: Control kite */
-  }
-
-  .cloud {
-    /* USER CODE Begin: Style cloud */
-
-    /* USER CODE END: Style kite */
-  }
-
-  .cloud.cloud1 {
-    /* USER CODE Begin: Control cloud1 */
-
-    /* USER CODE END: Control cloud1 */
-  }
-
-  .cloud.cloud2 {
-    /* USER CODE Begin: Control cloud2 */
-
-    /* USER CODE END: Control cloud2 */
-  }
-
-  .cloud.cloud3 {
-    /* USER CODE Begin: Control cloud3*/
-
-    /* USER CODE END: Control cloud3 */
-  }
-
-  input {
-    /* USER CODE Begin: Style the input field */
-
-    /* USER CODE END: Style the input field */
+    margin-top: 0;
   }
 
   #register-form {
-    margin-top: 40px;
-    padding-bottom: 20px;
+    margin-top: 1rem;
   }
 
   .footer {
     display: flex;
-    justify-content: flex-end;
-    margin: 0 122px 72px 0;
-  }
-
-  .contact-logo {
-    margin-left: 36px;
-  }
-
-  .content {
-    justify-content: space-between;
-    margin-right: 0;
+    justify-content: center;
   }
 }
