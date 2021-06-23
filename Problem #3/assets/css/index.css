@@ -9,12 +9,12 @@ body {
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
+  margin-left: 5rem;
 }
 
 .topbar {
   display: flex;
   height: 80px;
-  padding-left: 28px;
   align-items: center;
   color: var(--chula-pink);
   font-size: 24px;
@@ -27,7 +27,9 @@ body {
 
 .register-card {
   /* USER CODE Begin: Style the card */
-  /* prefer not to style anymore 😶 */
+  flex: 1;
+  margin: 2rem 0 0 0px;
+  max-width: 377px;
   /* USER CODE End: Style the card */
 }
 
@@ -43,18 +45,25 @@ body {
 }
 
 #register-form {
-  margin-top: 28px;
+  margin-top: 40px;
   padding-bottom: 20px;
+}
+
+#register-form > * {
+  width: 100%;
+  border-radius: 0.5rem;
 }
 
 input {
   /* USER CODE Begin: Style the input field */
-  padding: 5px 5px;
-  margin-bottom: 8px;
-  border-radius: 4px;
+  padding: 10px 15px;
+  border-color: rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
-  width: 15rem;
   /* USER CODE END: Style the input field */
+}
+
+input + input {
+  margin-top: 8px;
 }
 
 input:hover {
@@ -71,29 +80,32 @@ button {
   display: block;
   width: 15rem;
   padding: 0.5rem 5rem;
+  margin-top: 20px;
+  background-color: #ffffff;
   /* USER CODE END: Style the button */
 }
 
 button:hover {
   background: var(--chula-pink-dark);
+  color: white;
 }
 
 .kite,
 .cloud,
 .footer {
   /* USER CODE Begin: Hide it */
-
+  /* display: none; */
   /* USER CODE END: Hide it  */
 }
 
 .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
 /* USER CODE Begin: Manage screen width */
-@media screen and (min-width: 0px) {
+@media screen and (max-width: 767px) {
   /* USER CODE END: Manage screen width */
   body {
     background: url("../img/bg-desktop.svg");
