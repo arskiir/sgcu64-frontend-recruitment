@@ -48,6 +48,7 @@ const getDataFromFormAndValidate = (formData) => {
       if (isBlankDetected) continue; // Shows below message only once
       errorMessages.splice(0, 0, "Form(s) cannot be blank."); // inserts at the 0th index
       isBlankDetected = true;
+      continue;
     }
 
     if (key === "email") {
