@@ -2,6 +2,8 @@ body {
   --chula-pink: #de5c8e;
   --chula-pink-dark: #c5527e;
 
+  --form-transition-dur: 1s;
+
   min-height: 100vh;
   font-family: "Prompt", sans-serif;
 
@@ -46,9 +48,21 @@ body {
   color: rgba(0, 0, 0, 0.7);
 }
 
+@keyframes form-float-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 #register-form {
   margin-top: 40px;
   padding-bottom: 20px;
+  animation: form-float-in var(--form-transition-dur) ease-in-out;
 }
 
 #register-form > * {
@@ -98,6 +112,20 @@ button:hover {
   /* USER CODE Begin: Hide it */
   /* display: none; Why would we want to hide it? 😨😨😨 */
   /* USER CODE END: Hide it  */
+}
+
+@keyframes footer-opacity-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.footer {
+  animation: footer-opacity-in 1s ease var(--form-transition-dur);
+  animation-fill-mode: backwards;
 }
 
 .content {
