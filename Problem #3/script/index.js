@@ -23,8 +23,8 @@ form.addEventListener("submit", (event) => {
 
 const formatData = (data) => {
   let formattedData = "";
-  for (const entry of Object.values(data)) {
-    formattedData += entry + "\n";
+  for (const value of Object.values(data)) {
+    formattedData += value + "\n";
   }
   return formattedData;
 };
